@@ -77,7 +77,7 @@ public class addActivity extends Activity {
 
 
             System.out.println("@@@");
-            try { Thread.sleep(10000); }
+            try { Thread.sleep(1000); }
             catch (InterruptedException e) {
                 e.printStackTrace();
             }
