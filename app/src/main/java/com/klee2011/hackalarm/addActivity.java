@@ -14,11 +14,15 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.os.SystemClock;
+import java.util.Calendar;
+import android.os.CountDownTimer;
+
 
 public class addActivity extends Activity {
 
     final static private long ONE_SECOND = 1000;
-
+    int thrity = (int)System.currentTimeMillis() + 30 * 1000;
+    Intent listen;
     int currentHour;
     int currentMin;
     TimePicker timePicker;
@@ -34,22 +38,24 @@ public class addActivity extends Activity {
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
         button = (Button) findViewById(R.id.button);
-        Intent listen = new Intent(this, Listen.class);
+        listen = new Intent(this, Listen.class);
 
         pi = PendingIntent.getBroadcast(
-                        this,
-                        0, listen,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
+                this,
+                0, listen,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        );
 
         am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 
-        registerReceiver(br, new IntentFilter("listen") );
 
         br=new BroadcastReceiver() {
             public void onReceive(Context c, Intent i) {
+                System.out.print("@$$$@");
             }
         };
+
+        registerReceiver(br, new IntentFilter("listen") );
 
 
 
@@ -65,8 +71,10 @@ public class addActivity extends Activity {
             MyActivity.alarms[1] = currentMin;
             MyActivity.alarms[2] = 1;
 
-            am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() +
-                10*ONE_SECOND, pi );
+            am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                    SystemClock.elapsedRealtime() +
+                            60 * 1000, pi );
+
             System.out.println("@@@");
             startActivity(nextScreen);
 
