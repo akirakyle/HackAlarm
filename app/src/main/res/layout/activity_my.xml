@@ -18,7 +18,7 @@
         android:gravity="center|top"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:id="@+id/textView"
+        android:id="@+id/insturctions"
         android:textColor="#ff7c42ff"
         android:layout_alignParentTop="true"
     />
