@@ -7,7 +7,6 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.speech.RecognitionListener;
 import android.view.View;
 import android.widget.Button;
@@ -34,17 +33,11 @@ public class Listen extends Activity {
     @Override
     public void onClick() {
         SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
-=======
-import android.view.View;
-import android.speech.RecognitionListener;
 
-
-public class Listen extends Activity {
     private SpeechRecognizer sr;
 
     public void onClick(View view) {
         sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
->>>>>>> FETCH_HEAD
         MyRecognitionListener listener = new MyRecognitionListener();
         sr.setRecognitionListener((RecognitionListener) listener);
         sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));

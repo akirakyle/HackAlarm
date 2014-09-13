@@ -26,12 +26,10 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
         android:clickable="true"
         android:enabled="true"
         android:background="#00ffffff"
         android:onClick="clickFunc"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
