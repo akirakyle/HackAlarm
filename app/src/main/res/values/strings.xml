@@ -4,5 +4,7 @@
     <string name="app_name">Hack Alarm</string>
     <string name="alarm_title">HACK ALARM</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_add">addActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
