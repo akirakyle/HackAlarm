@@ -54,12 +54,15 @@ public class MyActivity extends Activity {
             setup();
 */
 
+<<<<<<< HEAD
 
     }
 
     public void goListen(){
         Intent nextScreen = new Intent(this, Listen.class);
         startActivity(nextScreen);
+=======
+>>>>>>> FETCH_HEAD
     }
 
     public void add(View view){
