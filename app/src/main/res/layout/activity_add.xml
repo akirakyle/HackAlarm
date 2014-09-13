@@ -20,16 +20,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WAKE UP!"
+        android:text="@string/wakeup"
         android:id="@+id/button"
         android:textAlignment="center"
         android:textColor="#ffff7633"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:clickable="true"
-        android:enabled="true" />
+        android:enabled="true"
+        android:background="#00ffffff" />
 </RelativeLayout>
