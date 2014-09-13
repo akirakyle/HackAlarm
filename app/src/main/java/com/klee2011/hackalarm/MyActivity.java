@@ -31,6 +31,37 @@ public class MyActivity extends Activity {
             time.setText("New Alarm");
             time.setTextSize(30);
         }
+<<<<<<< HEAD
+=======
+
+        if (alarms[2] > 0) {
+            Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
+            openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR,alarms[0]);
+            openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
+            startActivity(openNewAlarm);
+        }
+/*
+        PendingIntent pi;
+        BroadcastReceiver br;
+        AlarmManager am;
+
+        public void setup() {
+            br = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context c, Intent i) {
+                }
+            };
+            registerReceiver(br, new IntentFilter("com.authorwjf.wakeywakey") );
+            pi = PendingIntent.getBroadcast( this, 0, new Intent("com.authorwjf.wakeywakey"),
+                    0 );
+            am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
+        }
+
+            setup();
+*/
+
+
+>>>>>>> FETCH_HEAD
     }
 
     public void add(View view){
