@@ -7,21 +7,11 @@
     android:clickable="false"
     android:background="#ffcde6ff">
 
-    <TimePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timePicker"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:foregroundGravity="center_vertical|center_horizontal" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/wakeup"
         android:id="@+id/button"
-        android:textAlignment="center"
         android:textColor="#ff7c42ff"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -30,7 +20,17 @@
         android:enabled="true"
         android:background="#00ffffff"
         android:onClick="clickFunc"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/timePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:clickable="true"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
