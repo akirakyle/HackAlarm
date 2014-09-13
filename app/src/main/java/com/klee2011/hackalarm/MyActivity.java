@@ -55,14 +55,7 @@ public class MyActivity extends Activity {
 */
 <<<<<<< HEAD
 =======
-        Button listenAct = (Button) findViewById(R.id.listenAct);
-
-        listenAct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goListen();
-            }
-        });
+        
 
     }
 
