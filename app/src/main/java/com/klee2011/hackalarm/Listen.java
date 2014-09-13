@@ -1,11 +1,40 @@
 package com.klee2011.hackalarm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
+import android.speech.RecognitionListener;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TimePicker;
+
+
+public class Listen extends Activity {
+
+    Button listen_button;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.listen);
+
+        listen_button = (Button) findViewById(R.id.button);
+
+        //Listening to button event
+        listen_button.setOnClickListener(new View.OnClickListener() {
+            onClick();
+        });
+    }
+
+    @Override
+    public void onClick() {
+        SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+=======
 import android.view.View;
 import android.speech.RecognitionListener;
 
@@ -15,6 +44,7 @@ public class Listen extends Activity {
 
     public void onClick(View view) {
         sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+>>>>>>> FETCH_HEAD
         MyRecognitionListener listener = new MyRecognitionListener();
         sr.setRecognitionListener((RecognitionListener) listener);
         sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
