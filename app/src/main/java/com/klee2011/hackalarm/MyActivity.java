@@ -53,6 +53,7 @@ public class MyActivity extends Activity {
 
             setup();
 */
+<<<<<<< HEAD
         Button listenAct = (Button) findViewById(R.id.listenAct);
 
         listenAct.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +62,11 @@ public class MyActivity extends Activity {
                 goListen();
             }
         });
+=======
+<<<<<<< HEAD
+=======
+        
+>>>>>>> FETCH_HEAD
 
     }
 
