@@ -12,6 +12,14 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 import android.provider.AlarmClock;
 import android.app.AlarmManager;
+import android.os.SystemClock;
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.view.View.OnClickListener;
 
 
 public class MyActivity extends Activity {
@@ -43,6 +51,27 @@ public class MyActivity extends Activity {
             openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
             startActivity(openNewAlarm);
         }
+
+        PendingIntent pi;
+        BroadcastReceiver br;
+        AlarmManager am;
+
+        public void setup() {
+            br = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context c, Intent i) {
+                }
+            };
+            registerReceiver(br, new IntentFilter("com.authorwjf.wakeywakey") );
+            pi = PendingIntent.getBroadcast( this, 0, new Intent("com.authorwjf.wakeywakey"),
+                    0 );
+            am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
+        }
+
+            setup();
+
+
+
     }
 
     public void add(View view){
