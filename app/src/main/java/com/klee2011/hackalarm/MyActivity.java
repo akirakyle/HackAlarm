@@ -9,15 +9,14 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
+import android.provider.AlarmClock;
 import java.util.ArrayList;
 
 
 public class MyActivity extends Activity {
 
-    public static int[] alarms = new int[2];
+    public static int[] alarms = new int[3];
     public static boolean alarmset;
 
     @Override
@@ -26,19 +25,28 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         Button plus = (Button) findViewById(R.id.add);
         TextView time = (TextView) findViewById(R.id.time0);
-        if( alarms != null){
+        if (alarms != null) {
             String result = "";
-            result = result +Integer.toString(alarms[0]);
-            result = result +" : ";
-            result = result +Integer.toString(alarms[1]);
+            result = result + Integer.toString(alarms[0]);
+            result = result + " : ";
+            result = result + Integer.toString(alarms[1]);
             time.setText(result);
             time.setTextSize(60);
-        }else{
+        } else {
             time.setText("New Alarm");
             time.setTextSize(30);
         }
+
+
         Switch sw = (Switch) findViewById(R.id.switch0);
         sw.setChecked(alarmset);
+
+        if (alarms[2] > 0) {
+            Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
+            openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR,alarms[0]);
+            openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
+            startActivity(openNewAlarm);
+        }
     }
 
     public void add(View view){
