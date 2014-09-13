@@ -10,7 +10,7 @@
     android:id="@+id/id">
 
     <TextView
-        android:text='To stop the alarm, click Start Recording and say, "the quick brown fox jumped over the lazy dog"'
+        android:text='To stop the alarm, click Start Recording and say, "I am a lazy human"'
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/insturctions" />
