@@ -7,15 +7,16 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.speech.RecognitionListener;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TimePicker;
 
 
 public class Listen extends Activity {
 
     Button listen_button;
+    private SpeechRecognizer sr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +37,15 @@ public class Listen extends Activity {
             }
         });
     }
-<<<<<<< HEAD
 
-    @Override
     public void onClick() {
         SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
-
-    private SpeechRecognizer sr;
+    }
 
     public void onClick(View view) {
         sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
         MyRecognitionListener listener = new MyRecognitionListener();
-        sr.setRecognitionListener((RecognitionListener) listener);
+        sr.setRecognitionListener(listener);
         sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
     }
-=======
->>>>>>> FETCH_HEAD
 }

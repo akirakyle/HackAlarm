@@ -9,12 +9,7 @@
     android:orientation="vertical"
     tools:context=".MyActivity"
     android:gravity="center_vertical|center_horizontal"
-<<<<<<< HEAD
     android:background="#ffcde6ff">
-=======
-    android:background="@android:color/holo_orange_light"
-    android:id="@+id/id">
->>>>>>> FETCH_HEAD
 
     <TextView
         android:text="@string/alarm_title"
