@@ -71,12 +71,18 @@ public class addActivity extends Activity {
             MyActivity.alarms[1] = currentMin;
             MyActivity.alarms[2] = 1;
 
-            am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                    SystemClock.elapsedRealtime() +
-                            60 * 1000, pi );
+            //am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+            //        SystemClock.elapsedRealtime() +
+            //                10 * 1000, pi );
+
 
             System.out.println("@@@");
-            startActivity(nextScreen);
+            try { Thread.sleep(1000); }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("waah");
+            startActivity(listen);
 
     }
 
