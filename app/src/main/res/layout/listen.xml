@@ -8,15 +8,25 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="@string/startListen"
         android:id="@+id/listen_button"
+=======
+        android:text="Start Listen"
+        android:id="@+id/listen_button"
+        android:layout_gravity="center_horizontal" />
+        android:id="@+id/button"
+>>>>>>> FETCH_HEAD
         android:layout_gravity="center_horizontal"
         android:onClick="onClick" />
 
 <!--<<<<<<< HEAD
 
 
+<<<<<<< HEAD
     =======
         android:id="@+id/button"
     >>>>>>> FETCH_HEAD -->
+=======
+>>>>>>> FETCH_HEAD
 </LinearLayout>

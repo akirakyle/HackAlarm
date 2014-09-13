@@ -26,9 +26,17 @@ public class Listen extends Activity {
 
         //Listening to button event
         listen_button.setOnClickListener(new View.OnClickListener() {
-            onClick();
+            @Override
+            public void onClick(View view) {
+                SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+                sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+                MyRecognitionListener listener = new MyRecognitionListener();
+                sr.setRecognitionListener((RecognitionListener) listener);
+                sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
+            }
         });
     }
+<<<<<<< HEAD
 
     @Override
     public void onClick() {
@@ -42,4 +50,6 @@ public class Listen extends Activity {
         sr.setRecognitionListener((RecognitionListener) listener);
         sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
     }
+=======
+>>>>>>> FETCH_HEAD
 }
