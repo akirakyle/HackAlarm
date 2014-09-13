@@ -8,10 +8,12 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Button;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyActivity extends Activity {
 
     public static ArrayList<pair> alarms = new ArrayList<pair>();
+    public static ArrayList<String> alarmset = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
