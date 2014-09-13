@@ -2,10 +2,12 @@ package com.klee2011.hackalarm;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.Menu;
 import android.view.View;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -31,8 +33,6 @@ public class MyActivity extends Activity {
             time.setText("New Alarm");
             time.setTextSize(30);
         }
-<<<<<<< HEAD
-=======
 
         if (alarms[2] > 0) {
             Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
@@ -59,9 +59,20 @@ public class MyActivity extends Activity {
 
             setup();
 */
+        Button listenAct = (Button) findViewById(R.id.listenAct);
 
+        listenAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goListen();
+            }
+        });
 
->>>>>>> FETCH_HEAD
+    }
+
+    public void goListen(){
+        Intent nextScreen = new Intent(this, Listen.class);
+        startActivity(nextScreen);
     }
 
     public void add(View view){

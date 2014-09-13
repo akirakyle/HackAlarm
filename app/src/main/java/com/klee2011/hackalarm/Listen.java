@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,9 @@ public class Listen extends Activity {
         final TextView listenStat = (TextView) findViewById(R.id.listenStat);
         final TextView listenResults = (TextView) findViewById(R.id.listenResults);
 
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+        final Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        r.play();
 
         class MyRecognitionListener implements RecognitionListener {
 
@@ -87,17 +92,19 @@ public class Listen extends Activity {
                     //Log.d("Speech", "result=" + strResults.get(i));
                     listenResults.setText(strResults.get(i));
                 }
-                if (listenResults.getText() == "the quick brown fox jumped over the lazy dog.") {
-                    listenStat.append(" - sucess!!!");
+                Log.d("Speech", Integer.toString(listenResults.getText().length()));
+                if (listenResults.getText().toString().equalsIgnoreCase("I am a lazy human")) {
+                    listenStat.append(" - congratulations, you are a little less lazy");
+                    r.stop();
                     try {
-                        Thread.sleep(1000);                 //1000 milliseconds is one second.
+                        Thread.sleep(5000);                 //1000 milliseconds is one second.
                     } catch(InterruptedException ex) {
                         Thread.currentThread().interrupt();
                     }
                     returnScreen();
                 }
                 else {
-                    listenStat.append(" - try again :(");
+                    listenStat.append(" - try again, you lazy human :(");
                 }
             }
 
@@ -121,7 +128,7 @@ public class Listen extends Activity {
     }
 
     public void returnScreen(){
-        Intent nextScreen = new Intent(this, addActivity.class);
+        Intent nextScreen = new Intent(this, MyActivity.class);
         startActivity(nextScreen);
 
     }
