@@ -3,8 +3,10 @@ package com.klee2011.hackalarm;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.content.Intent;
+import android.widget.Button;
 
 
 public class MyActivity extends Activity {
@@ -13,6 +15,19 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        Button add = (Button) findViewById(R.id.add);
+
+        /* Listening to button event */
+        add.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent nextScreen = new Intent(getApplicationContext(), addActivity.class);
+                startActivity(nextScreen);
+
+            }
+        });
     }
 
 
