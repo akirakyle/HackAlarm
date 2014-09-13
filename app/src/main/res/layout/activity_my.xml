@@ -19,7 +19,7 @@
         android:textSize="50sp"
         android:textStyle="bold"
         android:id="@+id/textView"
-        android:textColor="@android:color/black"
+        android:textColor="#ff7c42ff"
         android:layout_alignParentTop="true"
     />
     <TextView
@@ -30,8 +30,7 @@
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="62dp"
-        android:layout_above="@+id/switch0"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -49,26 +48,6 @@
         android:onClick="add"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch0"
-        android:gravity="right"
-        android:textSize="30sp"
-        android:singleLine="false"
-        android:layout_above="@+id/add"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/test"
-        android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/add"
-        android:layout_toStartOf="@+id/add"
-        android:layout_marginTop="65dp" />
 
 
 </RelativeLayout>

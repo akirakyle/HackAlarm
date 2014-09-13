@@ -32,6 +32,6 @@
         android:foregroundGravity="center_vertical|center_horizontal"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:background="#ff66748d" />
+        android:background="#ff8695b1" />
 
 </RelativeLayout>
