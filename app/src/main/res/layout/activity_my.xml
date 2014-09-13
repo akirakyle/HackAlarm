@@ -61,5 +61,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="56dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test"
+        android:layout_below="@+id/textView"
+        android:layout_toLeftOf="@+id/add"
+        android:layout_toStartOf="@+id/add"
+        android:layout_marginTop="65dp" />
+
 
 </RelativeLayout>

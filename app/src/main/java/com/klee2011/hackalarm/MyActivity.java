@@ -12,6 +12,9 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 import android.provider.AlarmClock;
 import java.util.ArrayList;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+
 
 
 public class MyActivity extends Activity {
@@ -25,7 +28,9 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         Button plus = (Button) findViewById(R.id.add);
         TextView time = (TextView) findViewById(R.id.time0);
-        if (alarms != null) {
+        final TextView test = (TextView) findViewById(R.id.test);
+
+        if (alarms[2]>0) {
             String result = "";
             result = result + Integer.toString(alarms[0]);
             result = result + " : ";
@@ -35,6 +40,7 @@ public class MyActivity extends Activity {
         } else {
             time.setText("New Alarm");
             time.setTextSize(30);
+            test.setText("F");
         }
 
 
@@ -42,11 +48,25 @@ public class MyActivity extends Activity {
         sw.setChecked(alarmset);
 
         if (alarms[2] > 0) {
+            sw.setChecked(true);
             Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
             openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR,alarms[0]);
             openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
             startActivity(openNewAlarm);
+            test.setText("T");
+        }else{
+            sw.setChecked(false);
         }
+
+        sw.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(!isChecked){
+                    alarms[2] = 0;
+                test.setText("F");
+                }
+            }
+        });
     }
 
     public void add(View view){
