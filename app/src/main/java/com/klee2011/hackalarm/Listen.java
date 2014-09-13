@@ -41,19 +41,19 @@ public class Listen extends Activity {
 
             @Override
             public void onBeginningOfSpeech() {
-                listenStat.setText("onBeginningOfSpeech");
+                listenStat.setText("Speech Detected");
                 Log.d("Speech", "onBeginningOfSpeech");
             }
 
             @Override
             public void onBufferReceived(byte[] buffer) {
-                listenStat.setText("onBufferReceived");
+                //listenStat.setText("onBufferReceived");
                 Log.d("Speech", "onBufferReceived");
             }
 
             @Override
             public void onEndOfSpeech() {
-                listenStat.setText("onEndOfSpeech");
+                listenStat.setText("End of Speech Detected");
                 Log.d("Speech", "onEndOfSpeech");
             }
 
@@ -61,7 +61,7 @@ public class Listen extends Activity {
             public void onError(int error) {
                 String str = "onError: " + Integer.toString(error);
                 Log.d("Speech", str);
-                listenStat.setText(str);
+                //listenStat.setText(str);
             }
 
             @Override
@@ -72,20 +72,20 @@ public class Listen extends Activity {
 
             @Override
             public void onPartialResults(Bundle partialResults) {
-                listenStat.setText("onPartialResults");
+                //listenStat.setText("onPartialResults");
                 Log.d("Speech", "onPartialResults");
             }
 
             @Override
             public void onReadyForSpeech(Bundle params) {
-                listenStat.setText("onReadyForSpeech");
+                listenStat.setText("Ready For Speech");
                 Log.d("Speech", "onReadyForSpeech");
             }
 
 
             @Override
             public void onResults(Bundle results) {
-                listenStat.setText("onResults");
+                listenStat.setText("Results:");
                 Log.d("Speech", "onResults");
                 ArrayList<String> strResults = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 for (int i = 0; i < strResults.size();i++ ) {
