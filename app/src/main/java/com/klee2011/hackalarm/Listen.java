@@ -25,17 +25,15 @@ public class Listen extends Activity {
         listen_button = (Button) findViewById(R.id.button);
 
         //Listening to button event
-        listen_button.setOnClickListener(R.OnClickListener() {
-            onClick();
+        listen_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+                sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+                MyRecognitionListener listener = new MyRecognitionListener();
+                sr.setRecognitionListener((RecognitionListener) listener);
+                sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
+            }
         });
-    }
-
-
-    public void onClick(View view) {
-        SpeechRecognizer sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
-        sr = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
-        MyRecognitionListener listener = new MyRecognitionListener();
-        sr.setRecognitionListener((RecognitionListener) listener);
-        sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
     }
 }

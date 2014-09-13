@@ -10,7 +10,7 @@
     tools:context=".MyActivity"
     android:gravity="center_vertical|center_horizontal"
     android:background="@android:color/holo_orange_light"
-    android:id="@+id/">
+    android:id="@+id/id">
 
     <TextView
         android:text="@string/alarm_title"
