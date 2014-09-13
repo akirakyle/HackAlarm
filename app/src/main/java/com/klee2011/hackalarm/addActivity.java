@@ -32,7 +32,8 @@ public class addActivity extends Activity {
 
             currentHour = timePicker.getCurrentHour();
             currentMin = timePicker.getCurrentMinute();
-            MyActivity.alarms.add(new pair(currentHour,currentMin));
+            MyActivity.alarms[0] = currentHour;
+            MyActivity.alarms[1] = currentMin;
 
             startActivity(nextScreen);
 

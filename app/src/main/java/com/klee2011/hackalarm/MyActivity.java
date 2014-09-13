@@ -10,24 +10,38 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 
 public class MyActivity extends Activity {
 
-    public static ArrayList<pair> alarms = new ArrayList<pair>();
-    public static ArrayList<String> alarmset = new ArrayList<String>();
+    public static int[] alarms = new int[2];
+    public static boolean alarmset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         Button plus = (Button) findViewById(R.id.add);
-
+        TextView time = (TextView) findViewById(R.id.time0);
+        if( alarms != null){
+            String result = "";
+            result = result +Integer.toString(alarms[0]);
+            result = result +" : ";
+            result = result +Integer.toString(alarms[1]);
+            time.setText(result);
+            time.setTextSize(60);
+        }else{
+            time.setText("New Alarm");
+            time.setTextSize(30);
+        }
+        Switch sw = (Switch) findViewById(R.id.switch0);
+        sw.setChecked(alarmset);
     }
 
     public void add(View view){
-
                 Intent nextScreen = new Intent(this, addActivity.class);
                 startActivity(nextScreen);
 

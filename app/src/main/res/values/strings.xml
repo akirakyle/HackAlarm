@@ -8,7 +8,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="wakeup">WAKE UP!</string>
     <string name="add">+</string>
-    <string name="clock">6: 30</string>
+    <string name="clock">New Alarm</string>
     <string name="title_activity_speech_recognizer">SpeechRecognizerActivity</string>
     <string name="startListen">Start Listen</string>
 
