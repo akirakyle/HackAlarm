@@ -6,20 +6,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.MenuItem;
 import android.content.Intent;
-import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
-import org.w3c.dom.Text;
-import android.provider.AlarmClock;
-import android.app.AlarmManager;
-import android.os.SystemClock;
-import android.app.Activity;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.view.View.OnClickListener;
+
 
 
 public class MyActivity extends Activity {
@@ -30,7 +18,6 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        Button plus = (Button) findViewById(R.id.add);
         TextView time = (TextView) findViewById(R.id.time0);
 
         if (alarms[2]>0) {
@@ -44,40 +31,11 @@ public class MyActivity extends Activity {
             time.setText("New Alarm");
             time.setTextSize(30);
         }
-
-        if (alarms[2] > 0) {
-            Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-            openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR,alarms[0]);
-            openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
-            startActivity(openNewAlarm);
-        }
-
-        PendingIntent pi;
-        BroadcastReceiver br;
-        AlarmManager am;
-
-        public void setup() {
-            br = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context c, Intent i) {
-                }
-            };
-            registerReceiver(br, new IntentFilter("com.authorwjf.wakeywakey") );
-            pi = PendingIntent.getBroadcast( this, 0, new Intent("com.authorwjf.wakeywakey"),
-                    0 );
-            am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
-        }
-
-            setup();
-
-
-
     }
 
     public void add(View view){
                 Intent nextScreen = new Intent(this, addActivity.class);
                 startActivity(nextScreen);
-
     }
 
 
