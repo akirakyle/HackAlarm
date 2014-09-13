@@ -7,8 +7,11 @@ import android.view.View;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.Switch;
+import android.widget.TextView;
+
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class MyActivity extends Activity {
 
@@ -19,7 +22,6 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-
         Button plus = (Button) findViewById(R.id.add);
 
     }
