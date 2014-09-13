@@ -13,10 +13,11 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.TimePicker;
-import java.util.Calendar;
 import android.os.SystemClock;
 
 public class addActivity extends Activity {
+
+    final static private long ONE_SECOND = 1000;
 
     int currentHour;
     int currentMin;
@@ -35,7 +36,13 @@ public class addActivity extends Activity {
         button = (Button) findViewById(R.id.button);
         Intent listen = new Intent(this, Listen.class);
 
-        pi = PendingIntent.getBroadcast(this, 0, listen , PendingIntent.FLAG_ONE_SHOT );
+        pi = PendingIntent.getBroadcast(
+                        this,
+                        0, listen,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+
+        am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 
         registerReceiver(br, new IntentFilter("listen") );
 
@@ -44,7 +51,6 @@ public class addActivity extends Activity {
             }
         };
 
-        am = (AlarmManager)(this.getSystemService( Context.ALARM_SERVICE ));
 
 
     }
@@ -60,8 +66,8 @@ public class addActivity extends Activity {
             MyActivity.alarms[2] = 1;
 
             am.set( AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() +
-                currentMin*60, pi );
-
+                10*ONE_SECOND, pi );
+            System.out.println("@@@");
             startActivity(nextScreen);
 
     }

@@ -31,15 +31,7 @@ public class MyActivity extends Activity {
             time.setText("New Alarm");
             time.setTextSize(30);
         }
-<<<<<<< HEAD
-=======
 
-        if (alarms[2] > 0) {
-            Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
-            openNewAlarm.putExtra(AlarmClock.EXTRA_HOUR,alarms[0]);
-            openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
-            startActivity(openNewAlarm);
-        }
 /*
         PendingIntent pi;
         BroadcastReceiver br;
@@ -59,9 +51,6 @@ public class MyActivity extends Activity {
 
             setup();
 */
-
-
->>>>>>> FETCH_HEAD
     }
 
     public void add(View view){
