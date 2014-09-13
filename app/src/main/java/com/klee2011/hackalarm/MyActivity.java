@@ -7,27 +7,26 @@ import android.view.View;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.Button;
-
+import java.util.ArrayList;
 
 public class MyActivity extends Activity {
+
+    public static ArrayList<pair> alarms = new ArrayList<pair>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        Button add = (Button) findViewById(R.id.add);
+        Button plus = (Button) findViewById(R.id.add);
 
-        /* Listening to button event */
-        add.setOnClickListener(new View.OnClickListener() {
+    }
 
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), addActivity.class);
+    public void add(View view){
+
+                Intent nextScreen = new Intent(this, addActivity.class);
                 startActivity(nextScreen);
 
-            }
-        });
     }
 
 

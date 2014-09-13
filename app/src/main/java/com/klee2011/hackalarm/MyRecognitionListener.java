@@ -1,6 +1,19 @@
 package com.klee2011.hackalarm;
 
-class MyRecognitionListener implements RecognitionListener {
+import android.speech.RecognitionListener;
+import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
+import android.util.Log;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.MenuItem;
+import android.content.Intent;
+import java.util.ArrayList;
+
+
+public class MyRecognitionListener implements RecognitionListener {
 
     @Override
     public void onBeginningOfSpeech() {

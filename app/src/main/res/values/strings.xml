@@ -9,5 +9,6 @@
     <string name="wakeup">WAKE UP!</string>
     <string name="add">+</string>
     <string name="clock">6: 30</string>
+    <string name="title_activity_speech_recognizer">SpeechRecognizerActivity</string>
 
 </resources>

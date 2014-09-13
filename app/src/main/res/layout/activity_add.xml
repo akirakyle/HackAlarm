@@ -31,5 +31,7 @@
         android:layout_marginBottom="40dp"
         android:clickable="true"
         android:enabled="true"
-        android:background="#00ffffff" />
+        android:background="#00ffffff"
+        android:onClick="clickFunc"
+        />
 </RelativeLayout>
