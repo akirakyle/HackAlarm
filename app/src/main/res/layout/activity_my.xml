@@ -9,8 +9,7 @@
     android:orientation="vertical"
     tools:context=".MyActivity"
     android:gravity="center_vertical|center_horizontal"
-    android:background="@android:color/holo_orange_light"
-    android:id="@+id/">
+    android:background="#ffcde6ff">
 
     <TextView
         android:text="@string/alarm_title"
