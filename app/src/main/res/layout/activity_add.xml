@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     tools:context="com.klee2011.hackalarm.addActivity"
     android:gravity="center_vertical|center_horizontal"
-    style="@style/AppTheme"
     android:clickable="false"
-    android:background="#ff91f5ff">
+    android:background="@android:color/holo_orange_light">
 
     <TimePicker
         android:layout_width="wrap_content"
@@ -23,7 +22,7 @@
         android:text="@string/wakeup"
         android:id="@+id/button"
         android:textAlignment="center"
-        android:textColor="#ffff7633"
+        android:textColor="#ff1a3cff"
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
