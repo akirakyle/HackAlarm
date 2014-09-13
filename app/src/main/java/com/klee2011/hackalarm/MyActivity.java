@@ -3,16 +3,30 @@ package com.klee2011.hackalarm;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.view.MenuItem;
-import android.widget.TextView;
-
+import android.content.Intent;
+import android.widget.Button;
+import java.util.ArrayList;
 
 public class MyActivity extends Activity {
+
+    public static ArrayList<pair> alarms = new ArrayList<pair>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        Button plus = (Button) findViewById(R.id.add);
+
+    }
+
+    public void add(View view){
+
+                Intent nextScreen = new Intent(this, addActivity.class);
+                startActivity(nextScreen);
+
     }
 
 

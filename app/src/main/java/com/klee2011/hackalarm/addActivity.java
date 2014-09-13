@@ -22,27 +22,21 @@ public class addActivity extends Activity {
         setContentView(R.layout.activity_add);
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
-        currentHour = timePicker.getCurrentHour();
-        currentMin = timePicker.getCurrentMinute();
         button = (Button) findViewById(R.id.button);
 
-        //Listening to button event
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), MyActivity.class);
-
-                //Sending data to another Activity
-                nextScreen.putExtra("hour", new Integer(currentHour).toString());
-                nextScreen.putExtra("minute", new Integer(currentMin).toString());
-
-                startActivity(nextScreen);
-
-            }
-        });
     }
 
+    public void clickFunc(View view){
+
+            Intent nextScreen = new Intent(this, MyActivity.class);
+
+            currentHour = timePicker.getCurrentHour();
+            currentMin = timePicker.getCurrentMinute();
+            MyActivity.alarms.add(new pair(currentHour,currentMin));
+
+            startActivity(nextScreen);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
