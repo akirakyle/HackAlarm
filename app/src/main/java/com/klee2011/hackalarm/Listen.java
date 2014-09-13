@@ -26,7 +26,7 @@ public class Listen extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speech_recognizer);
+        setContentView(R.layout.listen);
         Button listen = (Button) findViewById(R.id.listen);
         final TextView listenStat = (TextView) findViewById(R.id.listenStat);
         final TextView listenResults = (TextView) findViewById(R.id.listenResults);
@@ -89,9 +89,12 @@ public class Listen extends Activity {
                 }
                 if (listenResults.getText() == "the quick brown fox jumped over the lazy dog.") {
                     listenStat.append(" - sucess!!!");
-                    Thread.sleep(1000);
-                    Intent nextScreen = new Intent(this, MyActivity.class);
-                    startActivity(nextScreen);
+                    try {
+                        Thread.sleep(1000);                 //1000 milliseconds is one second.
+                    } catch(InterruptedException ex) {
+                        Thread.currentThread().interrupt();
+                    }
+                    returnScreen();
                 }
                 else {
                     listenStat.append(" - try again :(");
@@ -115,6 +118,12 @@ public class Listen extends Activity {
                 sr.startListening(RecognizerIntent.getVoiceDetailsIntent(getApplicationContext()));
             }
         });
+    }
+
+    public void returnScreen(){
+        Intent nextScreen = new Intent(this, addActivity.class);
+        startActivity(nextScreen);
+
     }
 
     @Override

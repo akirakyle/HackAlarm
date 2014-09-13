@@ -51,7 +51,7 @@ public class MyActivity extends Activity {
             openNewAlarm.putExtra(AlarmClock.EXTRA_MINUTES, alarms[1]);
             startActivity(openNewAlarm);
         }
-
+/*
         PendingIntent pi;
         BroadcastReceiver br;
         AlarmManager am;
@@ -69,7 +69,7 @@ public class MyActivity extends Activity {
         }
 
             setup();
-
+*/
 
 
     }
