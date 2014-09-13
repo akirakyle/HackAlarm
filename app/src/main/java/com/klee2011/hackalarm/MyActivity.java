@@ -14,7 +14,7 @@ import android.provider.AlarmClock;
 import java.util.ArrayList;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-
+import android.app.AlarmManager;
 
 
 public class MyActivity extends Activity {
@@ -45,8 +45,6 @@ public class MyActivity extends Activity {
 
 
         Switch sw = (Switch) findViewById(R.id.switch0);
-        sw.setChecked(alarmset);
-
         if (alarms[2] > 0) {
             sw.setChecked(true);
             Intent openNewAlarm = new Intent(AlarmClock.ACTION_SET_ALARM);
@@ -64,6 +62,8 @@ public class MyActivity extends Activity {
                 if(!isChecked){
                     alarms[2] = 0;
                 test.setText("F");
+                }else if(alarms[2]>0){
+
                 }
             }
         });
