@@ -33,11 +33,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="listenResults"
+        android:text="Listen Results"
         android:id="@+id/listenResults"
         android:textSize="30dp"
         android:textColor="@android:color/black"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/listen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="112dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ready for Speech"
+        android:id="@+id/listenStat"
+        android:textSize="20dp"
+        android:layout_above="@+id/listenResults"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="83dp"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>

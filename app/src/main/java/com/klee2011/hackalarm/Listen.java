@@ -36,35 +36,35 @@ public class Listen extends Activity {
         final Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
         r.play();
 
+        final TextView listenStat = (TextView) findViewById(R.id.listenStat);
+
         class MyRecognitionListener implements RecognitionListener {
 
             @Override
             public void onBeginningOfSpeech() {
-<<<<<<< HEAD
                // listenStat.setText("onBeginningOfSpeech");
-=======
                 listenStat.setText("Speech Detected");
->>>>>>> FETCH_HEAD
+
                 Log.d("Speech", "onBeginningOfSpeech");
             }
 
             @Override
             public void onBufferReceived(byte[] buffer) {
-<<<<<<< HEAD
+
               //  listenStat.setText("onBufferReceived");
-=======
+
                 //listenStat.setText("onBufferReceived");
->>>>>>> FETCH_HEAD
+
                 Log.d("Speech", "onBufferReceived");
             }
 
             @Override
             public void onEndOfSpeech() {
-<<<<<<< HEAD
+
               //  listenStat.setText("onEndOfSpeech");
-=======
+
                 listenStat.setText("End of Speech Detected");
->>>>>>> FETCH_HEAD
+
                 Log.d("Speech", "onEndOfSpeech");
             }
 
@@ -72,11 +72,11 @@ public class Listen extends Activity {
             public void onError(int error) {
                 String str = "onError: " + Integer.toString(error);
                 Log.d("Speech", str);
-<<<<<<< HEAD
+
               //  listenStat.setText(str);
-=======
+
                 //listenStat.setText(str);
->>>>>>> FETCH_HEAD
+
             }
 
             @Override
@@ -93,22 +93,22 @@ public class Listen extends Activity {
 
             @Override
             public void onReadyForSpeech(Bundle params) {
-<<<<<<< HEAD
+
                // listenStat.setText("onReadyForSpeech");
-=======
+
                 listenStat.setText("Ready For Speech");
->>>>>>> FETCH_HEAD
+
                 Log.d("Speech", "onReadyForSpeech");
             }
 
 
             @Override
             public void onResults(Bundle results) {
-<<<<<<< HEAD
+
               //  listenStat.setText("onResults");
-=======
+
                 listenStat.setText("Results:");
->>>>>>> FETCH_HEAD
+
                 Log.d("Speech", "onResults");
                 ArrayList<String> strResults = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 for (int i = 0; i < strResults.size();i++ ) {
